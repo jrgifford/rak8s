@@ -1,9 +1,8 @@
-pik8s000    ansible_host=192.168.86.200
-pik8s001    ansible_host=192.168.86.201
-pik8s002    ansible_host=192.168.86.202
-pik8s003    ansible_host=192.168.86.203
-pik8s004    ansible_host=192.168.86.204
-pik8s005    ansible_host=192.168.86.205
+pik8s000    ansible_host=10.0.1.3
+pik8s001    ansible_host=10.0.1.4
+pik8s002    ansible_host=10.0.1.5
+pik8s003    ansible_host=10.0.1.6
+pik8s004    ansible_host=10.0.1.7
 
 [master]
 pik8s000

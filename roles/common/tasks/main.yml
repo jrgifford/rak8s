@@ -13,6 +13,14 @@
   tags:
     - hostname
 
+- name: Ensure master hostname is in /etc/hosts
+  lineinfile:
+    dest=/etc/hosts
+    regexp="^10.0.1.3.+$"
+    line="10.0.1.3  pik8s000"
+  tags:
+    - hostname
+
 # tasks file for common
 - name: Enabling cgroup options at boot
   copy:
@@ -37,6 +45,17 @@
     autoclean=yes
     autoremove=yes
     cache_valid_time=86400
+
+- name: Install very useful things
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - squid-deb-proxy-client
+    - htop
+    - vim
+  tags:
+    - packages
 
 - name: apt-get upgrade
   apt:
